@@ -2,6 +2,14 @@
 <!DOCTYPE TS>
 <TS version="2.1">
 <context>
+    <name>DownloadQueue</name>
+    <message>
+        <location filename="../qml/components/DownloadQueue.qml" line="86"/>
+        <source>Chapter</source>
+        <translation type="unfinished">Hoofdstuk</translation>
+    </message>
+</context>
+<context>
     <name>EntryPage</name>
     <message>
         <location filename="../qml/pages/EntryPage.qml" line="37"/>

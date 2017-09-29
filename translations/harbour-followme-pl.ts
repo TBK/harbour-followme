@@ -6,7 +6,7 @@
     <message>
         <location filename="../qml/components/DownloadQueue.qml" line="86"/>
         <source>Chapter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rozdział</translation>
     </message>
 </context>
 <context>
@@ -14,7 +14,7 @@
     <message>
         <location filename="../qml/pages/EntryPage.qml" line="37"/>
         <source>Chapter</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozdział</translation>
     </message>
     <message>
         <location filename="../qml/pages/EntryPage.qml" line="109"/>
