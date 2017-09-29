@@ -10,7 +10,7 @@ Page {
 	allowedOrientations: Orientation.Portrait | Orientation.Landscape
 
 	SilicaListView {
-		id: "searchView"
+        id: searchView
 
 		anchors.fill: parent
 
@@ -18,7 +18,7 @@ Page {
 			width: parent.width
 			height: header.height + Theme.paddingLarge
 			PageHeader {
-				id: "header"
+                id: header
 				title: "Content providers"
 			}
 		}

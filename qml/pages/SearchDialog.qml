@@ -15,12 +15,12 @@ Dialog {
 		width: parent.width
 
 		PageHeader {
-			id: 'pageHeader'
+            id: pageHeader
 			title: qsTr("Search")
 		}
 
 		TextField {
-			id: "searchField"
+            id: searchField
 			width: parent.width
 			label: qsTr("Search")
 			text: ''

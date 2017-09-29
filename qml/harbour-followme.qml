@@ -1,6 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import io.thp.pyotherside 1.3
+import io.thp.pyotherside 1.4
 import org.nemomobile.configuration 1.0
 import "pages"
 import "cover"
@@ -8,9 +8,9 @@ import "components"
 
 ApplicationWindow
 {
-	id: "app"
+    id: app
 
-	property string dataPath: "~/sdcard/FollowMe"
+    property string dataPath: "~/.FollowMe"
 	property string pluginPath: "/usr/share/harbour-followme/qml/plugins"
 	property bool dirtyList
 	property var ps: pageStack
@@ -65,7 +65,7 @@ ApplicationWindow
 	}
 
 	PyListEntries {
-		id: "pluginEntries"
+        id: pluginEntries
 		base: pluginPath
 		locator: []
 		event: "pluginFound"
@@ -82,7 +82,7 @@ ApplicationWindow
 	}
 
 	PyCreateDataPath {
-		id: "createDataPath"
+        id: createDataPath
 
 		onFinished: {
 			pluginEntries.activate();
@@ -90,7 +90,7 @@ ApplicationWindow
 	}
 
 	PyDataPath {
-		id: "pyDataPath"
+        id: pyDataPath
 		path: "Downloads/FollowMe"
 
 		onFinished: {
@@ -102,7 +102,7 @@ ApplicationWindow
 	}
 
 	ConfigurationValue {
-		id: "dataPathConfig"
+        id: dataPathConfig
 		key: "/harbour-followme/dataPath"
 		Component.onCompleted: {
 			if (value == undefined) {
@@ -116,7 +116,7 @@ ApplicationWindow
 	}
 
 	DownloadQueue {
-		id: "dQueue"
+        id: dQueue
 	}
 
 	initialPage: Component {
@@ -124,7 +124,7 @@ ApplicationWindow
 	}
 
 	cover: CoverPage {
-		id: "cp"
+        id: cp
 	}
 }
 

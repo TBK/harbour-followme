@@ -3,7 +3,7 @@ import Sailfish.Silica 1.0
 import "../components"
 
 Page {
-	id: "providerPage"
+    id: providerPage
 	allowedOrientations: Orientation.Portrait | Orientation.Landscape
 
 	property var provider
@@ -15,7 +15,7 @@ Page {
 	signal done(bool success, var entries)
 
 	SilicaListView {
-		id: "favList"
+        id: favList
 		property bool loading: true
 
 		anchors {
@@ -28,7 +28,7 @@ Page {
 			width: parent.width
 			height: pageHeader.height + Theme.paddingLarge
 			PageHeader {
-				id: 'pageHeader'
+                id: pageHeader
 				title: app.plugins[provider].label + ' ' + app.plugins[provider].levels[level - 1].label
 			}
 
@@ -57,7 +57,7 @@ Page {
 
 		delegate: FollowMeItem {
 			// TODO: no loading, no last, no total, contextmenu
-			id: "followMeItem"
+            id: followMeItem
 			property var entryItem: entryModel[index]
 			primaryText: entryItem.label != undefined ? entryItem.label : entryItem.id
 			starred: (entryItem.want != undefined && entryItem.want)
@@ -77,7 +77,7 @@ Page {
 			}
 
 			PySaveEntry {
-				id: "saveEntry"
+                id: saveEntry
 				base: app.dataPath
 			}
 
@@ -104,7 +104,7 @@ Page {
 	}
 
 	QueueProgress {
-		id: "queueProgress"
+        id: queueProgress
 
 		downloadQueue: app.downloadQueue
 

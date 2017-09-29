@@ -10,7 +10,7 @@ Dialog {
 		width: parent.width
 
 		PageHeader {
-			id: 'pageHeader'
+            id: pageHeader
 			title: qsTr("FollowMe settings")
 		}
 
@@ -23,7 +23,7 @@ Dialog {
 		}
 
 		TextField {
-			id: "dataPathField"
+            id: dataPathField
 			width: parent.width
 			label: qsTr("Data path")
 			anchors.leftMargin: Theme.horizontalPageMargin

@@ -1,4 +1,4 @@
-import io.thp.pyotherside 1.3
+import io.thp.pyotherside 1.4
 
 Python {
 	property string base
@@ -8,7 +8,7 @@ Python {
 	signal finished (bool success, var entry)
 
 	function activate() {
-		addImportPath(Qt.resolvedUrl('../../python'));
+        addImportPath(Qt.resolvedUrl('../python'));
 		importModule('followme', function () {
 			if (entry.locator == undefined) {
 				console.error('entry needs a locator');
@@ -32,7 +32,7 @@ Python {
 
 	function save(e, h) {
 		entry = e;
-		if (h != undefined) {
+        if (h !== undefined) {
 			addHandler(h);
 		}
 		finished.connect(finishAndDisconnect);

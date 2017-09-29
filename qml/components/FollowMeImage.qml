@@ -2,7 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 ListItem {
-	id: "listItem"
+    id: listItem
 
 	property int partIndex
 	property string partId
@@ -18,7 +18,7 @@ ListItem {
 	height: ready ? imageFile.sourceSize.height * imageFile.width / imageFile.sourceSize.width : busyFile.height + Theme.paddingLarge * 2
 
 	Image {
-		id: "imageFile"
+        id: imageFile
 		source: absoluteFile
 		fillMode: Image.PreserveAspectFit
 		width: parent.width - Theme.paddingSmall
@@ -35,7 +35,7 @@ ListItem {
 
 	BusyIndicator {
 		width: parent.width
-		id: "busyFile"
+        id: busyFile
 		running: true
 		size: BusyIndicatorSize.Small
 		visible: !ready

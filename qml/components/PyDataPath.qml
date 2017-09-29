@@ -1,5 +1,5 @@
 import QtQuick 2.0
-import io.thp.pyotherside 1.3
+import io.thp.pyotherside 1.4
 
 Python {
 	property string path
@@ -9,7 +9,7 @@ Python {
 	signal finished (string dataPath)
 
 	function activate() {
-		addImportPath(Qt.resolvedUrl('../../python'));
+        addImportPath(Qt.resolvedUrl('../python'));
 		importModule('followme', function () {
 			call('followme.dataPath', [path], function (result) {
 				finished(result);

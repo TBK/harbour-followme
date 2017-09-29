@@ -4,7 +4,7 @@ import "../components"
 import "../scripts/download.js" as Utils
 
 Page {
-	id: "mainPage"
+    id: mainPage
 
 	allowedOrientations: Orientation.Portrait | Orientation.Landscape
 
@@ -28,7 +28,7 @@ Page {
 	signal removedEntry (var entry)
 
 	SilicaListView {
-		id: "entryList"
+        id: entryList
 
 		property bool loading
 
@@ -42,7 +42,7 @@ Page {
 			width: parent.width
 			height: pageHeader.height + Theme.paddingLarge
 			PageHeader {
-				id: 'pageHeader'
+                id: pageHeader
 				title: qsTr("FollowMe")
 			}
 
@@ -117,11 +117,11 @@ Page {
 		}
 
 		model: ListModel {
-			id: 'entryModel'
+            id: entryModel
 		}
 
 		delegate: FollowMeItem {
-			id: 'followMeItem'
+            id: followMeItem
 
 			property var entryItem: entryItems[model.entryIndex]
 
@@ -152,7 +152,7 @@ Page {
 			}
 
 			Fetch {
-				id: "fetchChapters"
+                id: fetchChapters
 				locator: entryItem.locator
 
 				property bool gotopage
@@ -186,12 +186,12 @@ Page {
 			}
 
 			PySaveEntry {
-				id: "saveEntry"
+                id: saveEntry
 				base: app.dataPath
 			}
 
 			PyCleanEntry {
-				id: "cleanEntry"
+                id: cleanEntry
 				base: app.dataPath
 
 				onFinished: {
@@ -200,7 +200,7 @@ Page {
 			}
 
 			PySizeEntry {
-				id: "sizeEntry"
+                id: sizeEntry
 				base: app.dataPath
 				locator: entryItem.locator
 
@@ -319,7 +319,7 @@ Page {
 	        VerticalScrollDecorator {}
 
 		PyListEntries {
-			id: "listEntries"
+            id: listEntries
 			base: app.dataPath
 			locator: []
 			depth: 2
@@ -385,7 +385,7 @@ Page {
 	}
 
 	QueueProgress {
-		id: "queueProgress"
+        id: queueProgress
 
 		downloadQueue: app.downloadQueue
 
@@ -451,7 +451,7 @@ Page {
 
 		// strict mode is true by default
 		if (strict == undefined) {
-			strict == true;
+            strict = true;
 		}
 
 		// set the starting boundaries
@@ -510,7 +510,7 @@ Page {
 		var entryIndex = entry.locator[0].id + '/' + entry.locator[1].id;
 
 		// make sure it exists before converting to a model Item
-		if (entryItems[entryIndex] == undefined) {
+        if (entryItems[entryIndex] === undefined) {
 			entryItems[entryIndex] = entry;
 		}
 
@@ -519,7 +519,7 @@ Page {
 
 		// find the position and insert or append
 		var i = binarySearch(entryIndex, false);
-		if (i == entryList.model.count) {
+        if (i === entryList.model.count) {
 			entryList.model.append(modelItem);
 		}
 		else {
@@ -536,7 +536,7 @@ Page {
 		}
 		else {
 			var j = binarySearch(entryIndex, false, i);
-			if (i != j) {
+            if (i !== j) {
 				entryList.model.move(i, j, 1);
 				// try to keep the moved item in view
 				entryList.positionViewAtIndex(j, ListView.Visible);

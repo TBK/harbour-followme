@@ -1,5 +1,5 @@
 import QtQuick 2.0
-import io.thp.pyotherside 1.3
+import io.thp.pyotherside 1.4
 
 import "../scripts/download.js" as Utils
 
@@ -14,7 +14,7 @@ Python {
 	signal finished (bool success, string filename, string absoluteFile)
 
 	function activate() {
-		addImportPath(Qt.resolvedUrl('../../python'));
+        addImportPath(Qt.resolvedUrl('../python'));
 		importModule('followme', function () {
 			console.log("url to download is: '" + url + "'");
 			var suffix = Utils.getSuffix(url);

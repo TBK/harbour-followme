@@ -11,12 +11,12 @@ Dialog {
 	property alias unit: slider.label
 
 	PageHeader {
-		id: "header"
+        id: header
 		width: parent.width
 	}
 
 	Slider {
-		id: "slider"
+        id: slider
 		width: parent.width
 		anchors.top: header.bottom
 		valueText: value

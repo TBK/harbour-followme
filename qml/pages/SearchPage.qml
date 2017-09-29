@@ -3,7 +3,7 @@ import Sailfish.Silica 1.0
 import "../components"
 
 Page {
-	id: "searchPage"
+    id: searchPage
 	allowedOrientations: Orientation.Portrait | Orientation.Landscape
 
 	property string searchName
@@ -14,7 +14,7 @@ Page {
 	signal done(bool success, var entries)
 
 	SilicaListView {
-		id: "searchList"
+        id: searchList
 		property bool loading: true
 
 		anchors {
@@ -27,7 +27,7 @@ Page {
 			width: parent.width
 			height: pageHeader.height + Theme.paddingLarge
 			PageHeader {
-				id: 'pageHeader'
+                id: pageHeader
 				title: qsTr("Search for ") + searchName
 			}
 
@@ -42,7 +42,7 @@ Page {
 		model: searchModel
 
 		delegate: FollowMeItem {
-			id: "followMeItem"
+            id: followMeItem
 			property var entryItem: searchModel[index]
 			primaryText: entryItem.label != undefined ? entryItem.label : entryItem.id
 			secondaryText: entryItem.provider
@@ -93,7 +93,7 @@ Page {
 	}
 
 	QueueProgress {
-		id: "queueProgress"
+        id: queueProgress
 
 		downloadQueue: app.downloadQueue
 

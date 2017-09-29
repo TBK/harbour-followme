@@ -1,5 +1,5 @@
 import QtQuick 2.0
-import io.thp.pyotherside 1.3
+import io.thp.pyotherside 1.4
 
 Python {
 	property string base
@@ -10,7 +10,7 @@ Python {
 	signal finished (bool success, int size)
 
 	function activate() {
-		addImportPath(Qt.resolvedUrl('../../python'));
+        addImportPath(Qt.resolvedUrl('../python'));
 		importModule('followme', function () {
 			console.log("get size of '" + locator[locator.length - 1]['id'] + "'");
 			call('followme.dataSize', [base, locator], function (result) {

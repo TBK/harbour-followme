@@ -8,7 +8,7 @@ CoverBackground {
 	property string chapterText
 
 	CoverPlaceholder {
-		icon.source: "../../harbour-followme.svg"
+        icon.source: "../images/harbour-followme.png"
 	}
 
 	Column {
@@ -52,7 +52,7 @@ CoverBackground {
 	}
 
 	QueueProgress {
-		id: "queueProgress"
+        id: queueProgress
 
 		downloadQueue: app.downloadQueue
 

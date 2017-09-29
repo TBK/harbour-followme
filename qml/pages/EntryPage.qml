@@ -3,7 +3,7 @@ import Sailfish.Silica 1.0
 import "../components"
 
 Page {
-	id: "entryPage"
+    id: entryPage
 
 	// this is set from the MainPage, it has a locator, items
 	property var parentEntry
@@ -26,7 +26,7 @@ Page {
 
 	// TODO: make sure to cache them ALL (and save afterwards (if any fetching was done))
 	SilicaListView {
-		id: "entryView"
+        id: entryView
 		anchors.fill: parent
 
 		header: Column {
@@ -48,7 +48,7 @@ Page {
 		model: partModel
 
 		delegate: FollowMeImage {
-			id: "followMeImage"
+            id: followMeImage
 
 			property var part: partModel[index]
 
@@ -154,7 +154,7 @@ Page {
 	}
 
 	PySaveEntry {
-		id: "saveChapter"
+        id: saveChapter
 		base: app.dataPath
 		entry: entryPage.chapter
 
@@ -164,7 +164,7 @@ Page {
 	}
 
 	PySaveEntry {
-		id: "saveEntry"
+        id: saveEntry
 		base: app.dataPath
 		entry: entryPage.parentEntry
 
@@ -174,7 +174,7 @@ Page {
 	}
 
 	PyLoadEntry {
-		id: "loadChapter"
+        id: loadChapter
 		base: app.dataPath
 		locator: chapterLocator
 		autostart: true

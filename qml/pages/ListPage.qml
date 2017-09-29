@@ -16,7 +16,7 @@ Page {
 			width: parent.width
 			height: header.height + Theme.paddingLarge
 			PageHeader {
-				id: "header"
+                id: header
 				title: storage.getLabel(locator) + ": " + name
 			}
 
@@ -29,11 +29,11 @@ Page {
 		}
 
 		model: ListModel {
-			id: "listModel"
+            id: listModel
 		}
 
 		delegate: ListItem {
-			id: "listItem"
+            id: listItem
 			property bool want
 
 			Label {
