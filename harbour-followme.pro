@@ -73,7 +73,8 @@ DISTFILES += \
     qml/plugins/OMG.BEAU.PEEP/.FollowMe \
     qml/plugins/OtakuSmashComics/.FollowMe \
     qml/plugins/OtakuSmashManga/.FollowMe \
-    harbour-followme.svg
+    harbour-followme.svg \
+    rpm/harbour-followme.spec
 
     
 
